@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha(){
+		document.write("<br>");
+	}
+	
+	function mostra(texto){
+		document.write(texto);
+		pulaLinha();
+	}
+	
+	function dica(numeroChute, numeroPensado){
+		if( numeroChute > numeroPensado){
+			alert("Você chutou um número maior.");
+		} else {
+			alert("Você chutou um número menor.");
+		}
+	}
+	
+	function jogo(numeroPensado, tentativas){
+		let numeroChute;
+		while(tentativas > 0){
+			numeroChute = parseInt(prompt("Informe o número : "));
+			if(numeroChute == numeroPensado){
+				mostra("Parabéns você acertou!");
+				break;
+			} else {
+				tentativas--;
+				dica(numeroChute, numeroPensado);
+				alert("Sobraram " + tentativas + " tentativas!");
+			}			
+		}
+	}
+	
+	let numeroPensado = Math.round(Math.random() * 10);
+	let tentativas = 3;
+	
+	jogo(numeroPensado, tentativas);
+	
+	mostra("Fim do jogo!");
+
+</script>

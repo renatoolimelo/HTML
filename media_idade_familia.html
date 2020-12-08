@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha(){
+		document.write("<br>");
+	}
+
+	function mostra(texto){
+		document.write(texto);
+		pulaLinha();
+	}
+	
+	function verificarNumero(numero, texto){
+		while (isNaN(numero) || numero <= 0){
+			numero = parseInt(prompt(texto));
+			if( isNaN(numero)){
+				alert("Informar o número e não uma string.");
+			} else if(numero <= 0){
+				alert("Informa um número maior que zero.")
+			} 
+		}
+		return numero;		
+	}
+	
+	let tamanhoFamilia = NaN;
+	
+	tamanhoFamilia = verificarNumero(tamanhoFamilia, "Qual o tamanho da sua familia: ");
+	
+	let mediaIdades = 0;
+	let idadeParente;
+
+	for (parente = 1 ; parente <= tamanhoFamilia; parente++){
+		idadeParente = NaN;
+		mediaIdades += verificarNumero(idadeParente, "Qual a idade do parente " + parente);
+	}
+	
+	mediaIdades = (Math.round(mediaIdades / tamanhoFamilia *100))/100;
+	
+	mostra("A media total das idades é: " + mediaIdades);
+
+</script>

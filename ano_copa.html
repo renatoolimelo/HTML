@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha(){
+		document.write("<br>");
+	}
+	
+	function mostra(texto){
+		document.write(texto);
+		pulaLinha();
+	}
+	
+	let anoCopa = parseInt(prompt("Informa ano inicial: "));
+	
+	while (anoCopa <= 2020){
+		mostra("teve copa em " + anoCopa);
+		anoCopa += 4;
+	}
+	
+	mostra("FIM");
+
+</script>
